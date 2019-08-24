@@ -68,6 +68,8 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'api_token' => Str::random(60),
+            'mobile_number' => 1124841951,
+            'address' => 'الرياض'
         ]);
     }
 }

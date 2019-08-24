@@ -20,7 +20,11 @@ use Illuminate\Http\Request;
 
 
 Route::group(['middleware' => 'auth:api'], function(){
+
+  // get user data
   Route::get('/user', function() {
     return request()->user();
   });
+
+
 });
