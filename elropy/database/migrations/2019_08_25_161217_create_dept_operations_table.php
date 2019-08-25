@@ -14,12 +14,12 @@ class CreateDeptOperationsTable extends Migration
     public function up()
     {
         Schema::create('dept_operations', function (Blueprint $table) {
-          $table->bigIncrements('id');
-          $table->timestamps();
-          $table->unsignedBigInteger('user_id');
-          $table->foreign('user_id')->references('id')->on('users');
-          $table->double('value');
-          $table->double('remain');
+            $table->bigIncrements('id');
+            $table->timestamps();
+            $table->double('value');
+            $table->double('remain');
+            $table->unsignedBigInteger('client_id');
+            $table->foreign('client_id')->references('id')->on('clients');
         });
     }
 

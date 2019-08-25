@@ -19,12 +19,20 @@ use Illuminate\Http\Request;
 //
 
 
-Route::group(['middleware' => 'auth:api'], function(){
+// Route::group(['middleware' => 'auth:api'], function(){
 
-  // get user data
-  Route::get('/user', function() {
-    return request()->user();
+  /**************************************** Customer Part ************************************/
+  // get customer data
+  Route::get('/client/{id}', function($id) {
+    return \App\Client::find($id);
+  });
+  // get all customers
+  Route::get('/clients', function() {
+    return \App\Client::all();
   });
 
+  Route::post('/client', 'ClientController@store');
+  /**************************************** Customer Part ************************************/
 
-});
+
+// });

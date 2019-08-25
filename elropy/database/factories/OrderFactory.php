@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Product;
+use App\Order;
 use Faker\Generator as Faker;
 
-$factory->define(Product::class, function (Faker $faker) {
+$factory->define(Order::class, function (Faker $faker) {
     return [
       'name' => $faker->name,
     'unit_count' => $faker->numberBetween(1, 100),
@@ -14,5 +14,8 @@ $factory->define(Product::class, function (Faker $faker) {
     'box_price' => $faker->numberBetween(1, 100),
     'container_count' => $faker->numberBetween(1, 100),
     'container_price' => $faker->numberBetween(1, 100),
+    'price' => $faker->numberBetween(1, 400),
+    'client_id' => $faker->numberBetween(1, 50),
+    'bill_id' => $faker->numberBetween(1, 5),
     ];
 });

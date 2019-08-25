@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bill extends Model
 {
-    protected $fillable = ['user_id', 'value', 'buyed', 'depts_value'];
+  protected $fillable = ['value', 'buyed', 'depts_value', 'client_id'];
 
-    public function user_id() {
-      return $this->belongsTo(App\User);
-    }
+  public function client() {
+    return $this->belongsTo(Client::class);
+  }
+
 }

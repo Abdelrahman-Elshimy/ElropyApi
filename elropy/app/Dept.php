@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dept extends Model
 {
-    protected $fillable = ['user_id', 'value'];
-
-    public function user_id() {
-      return $this->belongsTo(App\User);
+    protected $fillable = ['value', 'client_id'];
+    
+    public function client() {
+      return $this->belongsTo(Client::class);
     }
 }
