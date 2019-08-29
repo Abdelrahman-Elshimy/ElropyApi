@@ -5,11 +5,13 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 use Validator;
+use App\DeptOperation;
 class DeptOperationController extends Controller
 {
     public function getUserDeptOperation() {
         $client_id = 1;
-        $operations = DB::table('dept_operations')->where('client_id', $client_id)->get();
+        // $operations = DB::table('dept_operations')->where('client_id', $client_id)->get();
+        $operations = DeptOperation::where('client_id', $client_id)->with('client')->get();
         return $operations;
 
     }
