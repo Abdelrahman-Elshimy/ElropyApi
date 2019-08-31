@@ -28,7 +28,7 @@ use Illuminate\Http\Request;
   });
   // get all customers
   Route::get('/clients', function() {
-    return \App\Client::with('dept')->get(); 
+    return \App\Client::orderBy('id', 'desc')->with('dept')->get(); 
   });
   // add new customer
   Route::post('/client', 'ClientController@store');

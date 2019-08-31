@@ -45,7 +45,7 @@ class ClientController extends Controller
 
           // return response when client added
           return response(['status' => true,
-          'messages' => 'added', 'client' => $client->where('name', $request->get('name'))->get()]);
+          'messages' => 'تم اضافة عميل جديد', 'client' => $client->where('name', $request->get('name'))->get()]);
         }
       }
 
